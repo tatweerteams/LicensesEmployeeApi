@@ -1,0 +1,851 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7208"
+  },
+  "Routes": [
+
+    //"GenerateAntiForgeryTokenTatweerSend",
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Antiforgery/GenerateAntiForgeryTokenTatweerSend",
+      "DownstreamScheme": "https",
+      "RouteClaimsRequirement": {
+      },
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Antiforgery/GenerateAntiForgeryTokenTatweerSend"
+    },
+
+    //branch Controller
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Branch/GetBranchs?{everything}",
+      "DownstreamScheme": "https",
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "OAuth",
+      //  "AllowedScopes": []
+      //},
+      "RouteClaimsRequirement": {
+        //"AdminSystemRole": "AdminSystem"
+        //All Permations
+      },
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Branch/GetBranchs?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Branch/GetActiveBranchs?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Branch/GetActiveBranchs?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Branch/{actionName}?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Branch/{actionName}?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Branch/{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Post", "Put" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Branch/{everything}"
+    },
+
+    //end branch Controller
+
+
+
+    // Accounts Controller
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Account/{actionName}?{everything}",
+      "DownstreamScheme": "https",
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Account/{actionName}?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Account/{everything}",
+      "DownstreamScheme": "https",
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "POST" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Account/{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Account/{actionName}?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Put", "Delete" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Account/{actionName}?{everything}"
+    },
+    // END ACCOUNT CONTROLLER
+
+
+
+    //Bank Controller
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Bank/GetBanks",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Bank/GetBanks"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Bank/GetActiveBanks?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Bank/GetActiveBanks?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Bank/{actionName}?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Put", "Delete" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Bank/{actionName}?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Bank/{actionName}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Post", "Put" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Bank/{actionName}"
+    },
+
+    //end Bank Controller
+
+    //region  Controller
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Region/GetRegions?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Region/GetRegions?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Region/GetRegionUnSelectedBank?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Region/GetRegionUnSelectedBank?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Region/{actionName}?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Delete" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Region/{actionName}?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Region/{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Post", "Put" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Region/{everything}"
+    },
+
+    //end region Controller
+
+    //BankRegion  Controller
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/BankRegion/GetBankRegions?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/BankRegion/GetBankRegions?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/BankRegion/GetActiveBankRegions?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/BankRegion/GetActiveBankRegions?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/BankRegion/{actionName}?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Delete", "Put" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/BankRegion/{actionName}?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/BankRegion/{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Post" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/BankRegion/{everything}"
+    },
+
+    //end BankRegion Controller
+
+    //ReasonRefuses  Controller
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/ReasonRefuses/GetReasonRefuses?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/ReasonRefuses/GetReasonRefuses?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/ReasonRefuses/GetActiveReasonRefuses?{everything}",
+      "DownstreamScheme": "https",
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/ReasonRefuses/GetActiveReasonRefuses?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/ReasonRefuses/{actionName}?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Delete", "Put" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/ReasonRefuses/{actionName}?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/ReasonRefuses/{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Post", "Put" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/ReasonRefuses/{everything}"
+    },
+
+    //end ReasonRefuses Controller
+
+    //OrderRequest  Controller
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/OrderRequest/GetOrderRequests?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/OrderRequest/GetOrderRequests?{everything}"
+    },
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/OrderRequest/{actionName}?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/OrderRequest/{actionName}?{everything}"
+    },
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/OrderRequest/{actionName}?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Delete", "Put" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/OrderRequest/{actionName}?{everything}"
+    },
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/OrderRequest/{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Post", "Put" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/OrderRequest/{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/OrderRequest/ApprovedOrderRequest?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Put" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/OrderRequest/ApprovedOrderRequest?{everything}"
+    },
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/OrderRequest/RejectOrderRequest?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Put" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/OrderRequest/RejectOrderRequest?{everything}"
+    },
+
+    //end OrderRequest Controller
+
+
+    //OrderItem  Controller
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/OrderItem/{actionName}?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/OrderItem/{actionName}?{everything}"
+    },
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/OrderItem/{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Post", "Put" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/OrderItem/{everything}"
+    },
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/OrderItem/{actionName}?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Delete", "Put" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/OrderItem/{actionName}?{everything}"
+    },
+    //end OrderItem Controller
+
+    //reports Controller
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Reports/GetAccountRequestReport?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Reports/GetAccountRequestReport?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Reports/GetEmpolyeeReport?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Reports/GetEmpolyeeReport?{everything}"
+    },
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Reports/GetBranchReport?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Reports/GetBranchReport?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Reports/GetStatisticBranchReport?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Reports/GetStatisticBranchReport?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5888
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Reports/GetOrderRequestPriteOutReport?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendGeteway/Reports/GetOrderRequestPriteOutReport?{everything}"
+    },
+
+
+
+    //end Reports Controller
+
+    //Permisstion controller
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7221
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Permisstion/GetPermisstions?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/UserManagmentGeteway/Permisstion/GetPermisstions?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7221
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Permisstion/GetActivePermisstion?{everything}",
+      "DownstreamScheme": "https",
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/UserManagmentGeteway/Permisstion/GetActivePermisstion?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7221
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Permisstion/ActivationPermisstion?{everything}",
+      "DownstreamScheme": "https",
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Put" ],
+      "UpstreamPathTemplate": "/UserManagmentGeteway/Permisstion/ActivationPermisstion?{everything}"
+    },
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7221
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Permisstion/{actionName}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Post", "Put" ],
+      "UpstreamPathTemplate": "/UserManagmentGeteway/Permisstion/{actionName}"
+    },
+
+    //end Permisstion Controller
+
+    //Role controller
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7221
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Role/GetRoles?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/UserManagmentGeteway/Role/GetRoles?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7221
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Role/GetActiveRoles?{everything}",
+      "DownstreamScheme": "https",
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/UserManagmentGeteway/Role/GetActiveRoles?{everything}"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7221
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Role/{actionName}?{everything}",
+      "DownstreamScheme": "https",
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Put", "delete" ],
+      "UpstreamPathTemplate": "/UserManagmentGeteway/Role/{actionName}?{everything}"
+    },
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7221
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Role/{actionName}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Post", "Put" ],
+      "UpstreamPathTemplate": "/UserManagmentGeteway/Role/{actionName}"
+    },
+
+    //end Role Controller
+
+    //User controller
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7221
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/GetUsers?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/UserManagmentGeteway/User/GetUsers?{everything}"
+    },
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7221
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/{actionName}?{everything}",
+      "DownstreamScheme": "https",
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Put" ],
+      "UpstreamPathTemplate": "/UserManagmentGeteway/User/{actionName}?{everything}"
+    },
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7221
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/{actionName}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Post", "Put" ],
+      "UpstreamPathTemplate": "/UserManagmentGeteway/User/{actionName}"
+    },
+
+    //end Role Controller
+
+    // user login Controller
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7221
+        }
+      ],
+      "DownstreamPathTemplate": "/api/SecurityLogin/LoginUser",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Post" ],
+      "UpstreamPathTemplate": "/LoginUserGeteway/SecurityLogin/LoginUser"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7221
+        }
+      ],
+      "DownstreamPathTemplate": "/api/SecurityLogin/ChenagePassword",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Post" ],
+      "UpstreamPathTemplate": "/LoginUserGeteway/SecurityLogin/ChenagePassword"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7221
+        }
+      ],
+      "DownstreamPathTemplate": "/api/SecurityLogin/GetUserInfo",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/LoginUserGeteway/SecurityLogin/GetUserInfo"
+    },
+
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7221
+        }
+      ],
+      "DownstreamPathTemplate": "/api/SecurityLogin/GenerateAntiForgeryTokens",
+      "DownstreamScheme": "https",
+      "RouteClaimsRequirement": {
+      },
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/LoginUserGeteway/SecurityLogin/GenerateAntiForgeryTokens"
+    },
+
+    //end user login Controller
+
+    //Loggin Controller
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7078
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Logging/GetLogginData?{everything}",
+      "DownstreamScheme": "https",
+
+      "RouteClaimsRequirement": {},
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/TatweerSendLogginGeteway/Logging/GetLogginData?{everything}"
+    }
+
+
+
+    //end Loggin Controller
+
+
+
+
+  ]
+}
